@@ -7,4 +7,4 @@
   
 * Stock chart with searchable, user-pinned events
   - Example: Overlay SARS outbreak timeline to RCL stock chart, to predict effect of Covid-19 on RCL.
-  - Users can cherry-pick "relevant" events to pin to stock chart.
+  - Users can cherry-pick "relevant" events to annotate to stock chart to explain price movements.
