@@ -1,5 +1,10 @@
 # W209-Final-Project
 
+### To-Do:
+* Create derived data for a few stocks.
+* Annotate a regular stock chart with event dates (e.g., earnings, dividends).
+
+
 ### Input Data:
 * Daily stock price (e.g., amd.csv)
 * Earnings Dates (earnings_latest.csv)
@@ -19,7 +24,3 @@
   - Dividend dollar amount
   - Absolute dollar amount: (Open after Event - Close before Event)
   - Percentage: (Open after Event - Close before Event)/(Close before Event)
-
-
-### To-Do:
-- Create derived data for a few stocks.
