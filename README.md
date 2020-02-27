@@ -3,6 +3,7 @@
 ### To-Do:
 * Create derived data for a few stocks.
 * Annotate a regular stock chart with event dates (e.g., earnings, dividends).
+  - Start by building chart in Jupyter notebook and then move to Vis tool (e.g., D3, Tableau).
 
 
 ### Input Data:
