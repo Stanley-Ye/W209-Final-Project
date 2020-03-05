@@ -4,6 +4,7 @@
 * Create derived data for a few stocks.
 * Annotate a regular stock chart with event dates (e.g., earnings, dividends).
   - Start by building chart in Jupyter notebook and then move to Vis tool (e.g., D3, Tableau).
+* Calender vis to track user-selected past/future key dates (e.g., earnings, dividends, revised revenue forecast) for user-selected stocks.
 
 ### Use Cases:
 * Plot Price Change (Next_Open - Current_Close) vs Date
