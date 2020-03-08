@@ -4,6 +4,8 @@
 * Create derived data for a few stocks.
 * Annotate a regular stock chart with event dates (e.g., earnings, dividends).
   - Start by building chart in Jupyter notebook and then move to Vis tool (e.g., D3, Tableau).
+* Import data set from Twitter for INTC for some specific dates surrounding earning and dividents.
+* Create Tableau visuals to join the stock price to twitter action.
   
 ### Vis Ideas:
 * Calender vis to track user-selected past/future key dates (e.g., earnings, dividends, revised revenue forecast) for user-selected stocks.
@@ -19,6 +21,10 @@
   - Answer Questions:
     * What percentage of days result in positive Price Change?
     * What is the daily average amount (%) of positive Price Changes?
+* Plot Price Change (Current_Close - Current_Open) vs Tweets
+  - Answes Questions:
+    * How did the stock price move based on tweets around the earnings/divident date?
+    * How does change in volumn correspond to social media conversation?
 
 ### Input Data:
 * Daily stock price (e.g., amd.csv)
