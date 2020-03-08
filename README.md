@@ -30,6 +30,7 @@
 * Daily stock price (e.g., amd.csv)
 * Earnings Dates (earnings_latest.csv)
 * Dividend Dates/Amount (dividends_latest.csv)
+* Twitter data(twitter.csv)
 
 
 ### Derived Data:
