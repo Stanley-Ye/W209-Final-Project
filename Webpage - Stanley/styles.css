@@ -1,0 +1,10 @@
+body {
+  background-color: white;
+}
+
+.bar { fill: steelblue; }
+
+rect:hover {
+    fill: lightblue;
+}
+
