@@ -1,4 +1,6 @@
 ### Advanced Features:
+* Create same-day price change charts to compare performance of individual stock to DJI, e.g., (Stock A's daily percentage change) - (DJI's).
+
 * Influencer stock predictions
   - Influencers can create a "formula" for generating predictions (e.g. +/- trend for next 10 days).
   - Formulas will be kept private.
