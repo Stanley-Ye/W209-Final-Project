@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<!-- <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Embedded Analytics with Tableau</title>
@@ -9,4 +9,63 @@
    <iframe width="1335px" height="894px" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">
     </iframe>
 </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="#StockDashboard">Stock Dashboard</a>
+</div>
+
+<div class="main">
+  <h2>Stock Dashboard</h2>
+  <iframe width="1335px" height="894px" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">
+  </iframe>
+</div>  
+
+</body>
+</html> 
