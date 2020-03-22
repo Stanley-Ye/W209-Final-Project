@@ -48,8 +48,17 @@ body {
   width:1335px;
   height:894px; 
 }
-
 </style>
+<!-- <script>
+  $(document).ready(function() {
+      $("a").click(function(e) {
+          e.preventDefault();
+  
+          $("#stock_iframe").attr('src', $(this).attr('url'));
+      })
+  });
+</script> -->
+
 </head>
 <body>
 
@@ -57,9 +66,9 @@ body {
   <ul id="nav">
     <li><a href="#">Navigation</a>
       <ul class="menu">
-          <a href="#StockDashboard">Stock Dashboard</a>
-          <a href="#PriceVolume">Price Volume Chart</a>
-          <a href="#CandleStick">CandleStick Chart</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">Stock Dashboard</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/ClosingPrice_Volume?:display_count=y&:origin=viz_share_link&:showVizHome=no">Price Volume Chart</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/CandleStickChart?:display_count=y&:origin=viz_share_link&:showVizHome=no">CandleStick Chart</a>
       </ul>
     </li>
   </ul>
