@@ -9,7 +9,7 @@ body {
 }
 
 .sidenav {
-  width: 180px;
+  width: 190px;
   position: fixed;
   z-index: 1;
   top: 20px;
@@ -31,16 +31,24 @@ body {
   color: #064579;
 }
 
-.main {
-  margin-left: 190px; /* Same width as the sidebar + left position in px */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+#nav {
+  float:left;
+  width:160px;
+  background:#333; 
+  color:#fff; 
+  position:fixed; 
+  top:0px; 
+  bottom:0px; 
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+#main {
+  margin-left: 200px;
 }
+#main iframe{
+  width:1335px;
+  height:894px; 
+}
+
 </style>
 </head>
 <body>
@@ -57,10 +65,11 @@ body {
   </ul>
 </div>
 
-<div class="main">
+<div id="main">
   <h2>Stock Dashboard</h2>
-  <iframe width="1335px" height="894px" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">
-  </iframe>
+  <!-- <iframe width="1335px" height="894px" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">
+  </iframe> -->
+  <iframe align="left" frameborder="0" name="stock_iframe" id="main_iframe" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no"></iframe>
 </div>  
 
 </body>
