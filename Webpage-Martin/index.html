@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+#nav {
+  width:160px;
+  background:#333; 
+  color:#fff; 
+  position:fixed; 
+  top:0px; 
+  bottom:0px; 
+}
+
+#main {
+  margin-left: 210px;
+  position:fixed; 
+  top:0px; 
+  bottom:0px; 
+  margin-top: 5px;
+  background: #ddd;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+#main iframe{
+  width:1100px;
+  height:750px; 
+}
+</style>
+<!-- <script>
+  $(document).ready(function() {
+      $("a").click(function(e) {
+          e.preventDefault();
+  
+          $("#stock_iframe").attr('src', $(this).attr('url'));
+      })
+  });
+</script> -->
+
+</head>
+<body>
+
+<div class="sidenav">
+  <ul id="nav">
+    <li><a href="#">Navigation</a>
+      <ul class="menu">
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">Stock Dashboard</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/ClosingPrice_Volume?:display_count=y&:origin=viz_share_link&:showVizHome=no">Price Volume Chart</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Gopi_15844229624830/CandleStickChart?:display_count=y&:origin=viz_share_link&:showVizHome=no">CandleStick Chart</a>
+          <a target="stock_iframe" href="https://public.tableau.com/views/Stock_Price_Change/OvernightPriceChange?:display_count=y&:origin=viz_share_link&:showVizHome=no">Stock Price Change</a>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div id="main">
+  <!-- <h2>Stock Dashboard</h2> -->
+  <!-- <iframe width="1335px" height="894px" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no">
+  </iframe> -->
+  <iframe align="left" frameborder="0" name="stock_iframe" id="main_iframe" src="https://public.tableau.com/views/Gopi_15844229624830/StockDashboard?:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no"></iframe>
+</div>  
+
+</body>
+</html> 
