@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Olympic Gold Medals Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #1abc9c;
+  padding: 15px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  z-index: 999;
+  /*position: absolute;*/
+  /*padding-left: 250px;*/
+  width: 1200px;
+  margin: auto;
+  /*padding: 50px;*/
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+#navbar a:hover:not(.active) {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 20px 50px 20px 50px;
+  font-size: 17;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  /*width: 100%;*/
+  width: 1200px;
+  margin: auto;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#wrapper {
+  /*border: 1px solid #000;*/
+  width: 1200px;
+  margin: auto;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  
+  
+}
+
+.centered {
+  position: absolute;
+  color: white;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.team_info{
+  text-align: center;
+  /*width: 150px;*/
+  padding: 20px 20px;
+}
+
+.team_photo{
+
+  background-color: white;
+  border-radius: 50px;
+  /*border: 1px solid #ddd;*/
+/*  padding-left: 5%;
+  padding-right: 5%;*/
+  /*width: 80%;*/
+  width: 200px;
+  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+
+}
+.team_photo img{
+  width: 90%;
+  max-height: 50%;
+  /*height: auto;*/
+  border-radius: 50px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+/*.text{
+  font-size: 
+}*/
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="city-dawn-dusk-night-236937.jpg" alt="Olympic" style="width:1200px;">
+        <div class="centered">
+            <h1>Exploratory Data Analysis on 120 Years of Summer Olympic Games & Medals</h1>
+            <h3>W209 Final Project</h3>
+        </div>
+    </div>
+    <!--     <div class="header">
+        <h2 style="color:white;">Exploratory Data Analysis on 120 Years of Summer Olympic Games & Medals</h2>
+        <h4 style="color:white;">W209 Final Project</h4>
+        <img src="olympic_pic.png">
+    </div> -->
+    <div id="navbar">
+        <a href="#intro">Introduction</a>
+        <a href="#analysis1">Overview</a>
+        <a href="#analysis2">Gender</a>
+        <a href="#analysis3">Sports</a>
+        <a href="#analysis4">Search</a>
+        <a href="#team">About Us</a>
+    </div>
+    <div id="wrapper">
+        <div class="content" id="intro">
+            <h2 id="intro">1 Introduction</h2>
+            <p><strong>The Origin:</strong> Inspired by the ancient Olympic Games originally held in Olympia, Greece between the 8th century BC and the 4th century AD, the Modern Olympic Games (aka Olympics) were first held in Athens, Greece in 1896. The Olympics are now considered the world's foremost sports competition, featuring summer and winter sports competitions in which thousands of athletes from around the world compete in a variety of events every four years. The goal of this analysis is to identify patterns from 120 years of Olympic data and determine the factors that contribute to Olympic medal success.<br /><br />
+                <strong>Data Sources:</strong> The datasets for this analysis were obtained from Kaggle. One dataset, 120 years of Olympic History: Athletes and Results, contains more than 270,000 rows and 15 columns including athlete's name, gender, age, height, weight, team, games, year, season, city, sport, event, and medal. The other dataset, Olympic Sports and Medals, 1896-2012, contains medal information as well as country, sport, event, GDP per capita, and population information.<br /><br />
+                <strong>Target Audience:</strong> The target audiences for this analysis are media sources needing a quick reference for Olympic results (basic), sports enthusiasts and athletes looking to gain additional insights into performance by country and/or sport (intermediate), and National Olympic Committees (NOCs) looking to improve medal performance for its country's athletes. <br />
+            </p>
+        </div>
+        <div style="background-color:#CDCDCD" id="analysis1">
+            <div class="content">
+                <h2 id="analysis1">2 Overview</h2>
+                <p> Since the Olympic Games were first held in 1896, the event has provided a platform for countries to showcase their sporting talent on the world stage. To date, the world has come together to participate in <strong>28 Summer Olympic Games</strong>, with the US, Greece, and the UK hosting the most games. Countries in Europe, North America, and Oceania have participated in the most Olympic Games, while with the exception of Egypt and South Africa, African countries have participated in comparatively fewer Olympic Games. The African continent has yet to host its first event.<br /><br />
+                    <em>Use the navigation pane on the top left corner of the map to search, zoom, and/or pan across countries of interest. Use the date selector in the top right to scroll through the different Olympic Games by year and hover over a particular country or host city to obtain more details.</em>
+                    <br />
+                </p>
+                <div class='tableauPlaceholder' id='viz1575828366599' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_map_mareiter&#47;DashboardMap&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='dashboard_map_mareiter&#47;DashboardMap' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_map_mareiter&#47;DashboardMap&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' /></object></div>
+                <script type='text/javascript'>
+                var divElement = document.getElementById('viz1575828366599');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '677px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '677px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '727px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br />
+                <p><strong>Participant Countries & Events:</strong> The first Olympic Games featured 12 participant countries, growing significantly in popularity to more than <strong>200 countries</strong> in the latest 2016 games, held in Rio de Janeiro. The number of events and athletes has also grown proportionally to the number of countries over time, from 176 athletes competing across 47 events in 1896 to more than <strong>11,000 athletes</strong> competing across <strong>306 events</strong> in 2016. Interestingly, world politics also factor prominently into the Olympic Games. Hover over the events line in the following chart to obtain additional information on the most popular sports.</p>
+                <div class='tableauPlaceholder' id='viz1575829808746' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_bar_mareiter&#47;DashboardBar&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='dashboard_bar_mareiter&#47;DashboardBar' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_bar_mareiter&#47;DashboardBar&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' /></object></div>
+                <script type='text/javascript'>
+                var divElement = document.getElementById('viz1575829808746');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '677px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '677px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '727px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br />
+                <p>
+                    While simply qualifying for the Olympic Games is an achievement in itself, we often associate Olympic success with the number of medals won, and medal counts are a common way of comparing across countries and athletes. The tradition of awarding medals began in the 1904 Summer Olympics in St. Louis, Missouri and, with a few exceptions, gold, silver, and bronze medals are awarded to the winner, first runner-up, and second runner-up for each event respectively. <br /><br />
+                    <strong>Medal Winning Trends:</strong> Currently, the sports that hold the largest number of events, and therefore yield the highest medal counts, include athletics (track and field), swimming, cycling, wrestling, canoeing, shooting, and weight lifting. However, simply increasing the number of countries and events has not translated into success for all countries. Over time, the proportion of countries winning medals to total participant countries has declined significantly, with just <strong>42 percent of countries</strong> taking home medals in 2016. More than <strong>35 countries have yet to medal</strong> in an Olympic event historically.
+                </p>
+                <div class='tableauPlaceholder' id='viz1575830425091' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_prop_mareiter&#47;DashboardProp&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='dashboard_prop_mareiter&#47;DashboardProp' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard_prop_mareiter&#47;DashboardProp&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' /></object></div>
+                <script type='text/javascript'>
+                var divElement = document.getElementById('viz1575830425091');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '577px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '1100px';
+                    vizElement.style.height = '577px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '727px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+        </div>
+        <div class="content" id="analysis2">
+            <h2 id="analysis2">3 Gender</h2>
+            <p> <strong>Interesting Insights:</strong></p>
+            <p>Did you know that the Olympic Games has traditionally been a male-dominated sporting event? The first Olympics included exclusively male athletes, however, the promotion of women's events in recent years has been critical to the increasing popularity of competition and a key determinant of a country's gold medal success.<br /><br />
+                Overall, Europe, North America and Asia have participated in more sport disciplines than Africa, Oceania, and South America. In terms of the gender distribution, women's events account for at least <strong>40 percent</strong> of total events for NOCs in Asia, Europe, North America, while women's events for African and South American countries comprise less than <strong>25 percent</strong>.<br /><br />
+                The step chart below shows a comparison of gold medal counts for men and women over the years (Summer Olympics only). One can observe a <strong>significant increase in women's gold medal counts from 1984 onward</strong>, reflecting the introduction of new events, thus narrowing the gap between men's and women's events. Gold medal counts for men rose sharply in 1920 as few winter sports were introduced in that year's summer Olympic event. Shortly after, the summer and winter sports were divided into two separate Olympic events.<br />
+            </p>
+            <div class='tableauPlaceholder' id='viz1575835922945' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;W2&#47;W209_MS_2&#47;Dashboard6&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='W209_MS_2&#47;Dashboard6' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;W2&#47;W209_MS_2&#47;Dashboard6&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' /></object></div>
+            <script type='text/javascript'>
+            var divElement = document.getElementById('viz1575835922945');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1100px';
+                vizElement.style.height = '827px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1100px';
+                vizElement.style.height = '827px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1577px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+            <br />
+            <p>In comparing gold medal counts by sport pre and post 1984, one can observe that there is a significant increase in women's gold medals (hence the number of sports that women participated in) post 1984. Among these, sports like Aquatics, Athletics, Cycling, Gymnastics, Judo, Rowing, Sailing, shooting increased the most. Most of the above mentioned sports now have equivalent number of events for both men and women. </p>
+            <div class='tableauPlaceholder' id='viz1575838970066' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;W2&#47;W209_MS_4&#47;Dashboard5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='W209_MS_4&#47;Dashboard5' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;W2&#47;W209_MS_4&#47;Dashboard5&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' /></object></div>
+            <script type='text/javascript'>
+            var divElement = document.getElementById('viz1575838970066');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1100px';
+                vizElement.style.height = '727px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1100px';
+                vizElement.style.height = '727px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '727px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+        <div style="background-color:#CDCDCD" id="analysis3">
+            <div class="content" id="analysis3">
+                <h2 id="analysis3">4 Sports</h2>
+                <p> Decorated Olympic athletes such as Michael Phelps (Swimmer; USA; 23 Gold Medals) and Usain Bolt (Jamaica; Sprinter; 8 Gold Medals) have contributed significantly to their respective country's gold medal tally in recent years. The table below displays countries which have averaged more than 1 medal per gold winner athlete in last 30 years, meaning that these countries have regularly produced multi-gold medalist athletes within or across Olympic years.<br /><br />
+                    One can also see that different countries excel in different sports. For example, the <strong>USA and Hungary</strong> have historically won more gold medals per athlete in <strong>swimming and tennis</strong>, while <strong>China</strong> has won more gold medals per athlete in <strong>table tennis and diving</strong>. On the other spectrum there are countries like <strong>Japan, Jamica and Ethiopia</strong> who produce mtulti-gold winners in just one particular sports which becomes identity of that country.
+                </p>
+                <div class='tableauPlaceholder' id='viz1575751905282' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_15746211355720&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='GauravAnalysis_15746211355720&#47;Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_15746211355720&#47;Dashboard1&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' /></object></div>
+                <script type='text/javascript'>
+                var divElement = document.getElementById('viz1575751905282');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '1440px';
+                    vizElement.style.height = '652px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '1440px';
+                    vizElement.style.height = '652px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '727px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br />
+                <p> <strong>Athlete Weight Height Distribution:</strong> As with most sporting events, an athlete's physical characteristics are a key determinant of gold medal success. There is clear differentiation in men vs women average weight and height but the distribution of sports in quite similar across gender.<br /><br />
+                    The average height for female gold medal winners ranges from 155 to 185 cm, depending on the sport, while the average weight ranges from 45 to 75 kilograms. For male gold medal winners, the average height ranges from 170 to 195 cm, while the average weight ranges from 65 to 95 kilograms.<br /><br />
+                    Sports such as gymnastics, diving, and trampolining generally feature shorter and lighter athletes. In contrast, sports such as basketball, volleyball, and rugby would prefer to have taller and heavier athletes. <strong>Weightlifting is a unique</strong> sport in which gold medal success is associated with <strong>low-height and high-weight</strong> athletes. Based on these characteristics, which sport would you compete in?</p>
+                <br />
+                <div class='tableauPlaceholder' id='viz1575746613603' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_atheletes&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='GauravAnalysis_atheletes&#47;Story1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_atheletes&#47;Story1&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' /></object></div>
+                <script type='text/javascript'>
+                var divElement = document.getElementById('viz1575746613603');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width = '1016px';
+                vizElement.style.height = '991px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+        </div>
+        <div class="content" id="analysis4">
+            <br />
+            <h2 id="analysis4">6 Search</h2>
+            <p><em><strong>Navigation Instructions:</strong> The following line chart displays overall gold medal counts over the years for different countries, sports, and events. Use the selection boxes to filter by individual (or multiple) countries sports and/or events. The resulting chart will reflect the sum of all Gold Medals. <br />
+                    Note: If no line appears, then the Country/Sport/Event combination has not won any Gold Medals.</em></p>
+            <br />
+            <div class='tableauPlaceholder' id='viz1575715427986' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_15746211355720&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='GauravAnalysis_15746211355720&#47;Dashboard2' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ga&#47;GauravAnalysis_15746211355720&#47;Dashboard2&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='filter' value='publish=yes' /></object></div>
+            <script type='text/javascript'>
+            var divElement = document.getElementById('viz1575715427986');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1200px';
+                vizElement.style.height = '827px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1200px';
+                vizElement.style.height = '827px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '727px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+        <div style="background-color:lightgrey">
+            <br />
+            <div class="content">
+                <h2 id="team">5 About Us</h2>
+                <p>
+                    <h4>Team Members</h4>
+                    <table cellpadding="50px">
+                        <tr>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Michelle Sun Photo" src="michelle_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Michelle Sun<br />
+                                            <a href="mailto:sunh0003@berkeley.edu">sunh0003@berkeley.edu</a><br />
+                                            Graduate student from Masters in Information and Data Science at Berkeley
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Mike Reiter Photo" src="mike_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Mike Reiter<br />
+                                            <a href="mailto:mareiter@berkeley.edu">mareiter@berkeley.edu</a><br />
+                                            Graduate student from Masters in Information and Data Science at Berkeley
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Gaurav Desai Photo" src="gaurav_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Gaurav Desai<br />
+                                            <a href="mailto:gaurav.desai@berkeley.edu">gaurav.desai@berkeley.edu</a><br />
+                                            Graduate student from Masters in Information and Data Science at Berkeley
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                     <ul>
+                        <li>
+                            <h5>Michelle Sun</h5>
+                            Graduate student from Masters in Information and Data Science at Berkeley<br />
+                            <a href="mailto:sunh0003@berkeley.edu">sunh0003@berkeley.edu</a>
+                        </li>
+                        <li>
+                            <h5>Mike Reiter</h5>
+                            Graduate student from Masters in Information and Data Science at Berkeley<br />
+                            <a href="mailto:mareiter@berkeley.edu">mareiter@berkeley.edu</a>
+                        </li>
+                        <li>
+                            <h5>Gaurav Desai</h5>
+                            Graduate student from Masters in Information and Data Science at Berkeley<br />
+                            <a href="mailto:gaurav.desai@berkeley.edu">gaurav.desai@berkeley.edu</a>
+                        </li>
+                    </ul> -->
+                </p>
+            </div>
+        </div>
+        <script>
+        window.onscroll = function() { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        </script>
+    </div>
+</body>
+
+</html>
