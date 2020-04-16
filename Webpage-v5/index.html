@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stock Price Patterns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #1abc9c;
+  padding: 15px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  z-index: 999;
+  /*position: absolute;*/
+  /*padding-left: 250px;*/
+  width: 1200px;
+  margin: auto;
+  /*padding: 50px;*/
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+#navbar a:hover:not(.active) {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 20px 50px 20px 50px;
+  font-size: 17;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  /*width: 100%;*/
+  width: 1200px;
+  margin: auto;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#wrapper {
+  /*border: 1px solid #000;*/
+  width: 1200px;
+  margin: auto;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  
+  
+}
+
+.centered {
+  position: absolute;
+  color: white;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.team_info{
+  text-align: center;
+  /*width: 150px;*/
+  padding: 20px 20px;
+}
+
+.team_photo{
+
+  background-color: white;
+  border-radius: 50px;
+  /*border: 1px solid #ddd;*/
+/*  padding-left: 5%;
+  padding-right: 5%;*/
+  /*width: 80%;*/
+  width: 200px;
+  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+
+}
+.team_photo img{
+  width: 90%;
+  max-height: 50%;
+  /*height: auto;*/
+  border-radius: 50px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+/*.text{
+  font-size: 
+}*/
+</style>
+</head>
+
+<body>
+    <div class="container" id="home">
+        <img src="Title-Pic.png" alt="chart-magnifying-glass" style="width:1200px;">
+    </div>
+
+    <div id="navbar">
+        <a href="#home">Home</a>
+        <a href="#intro">Overview</a>
+        <a href="#analysis1">Standard</a>
+        <a href="#analysis2">Candlestick</a>
+        <a href="#analysis3">Daily Change</a>
+        <a href="#team">About Us</a>
+    </div>
+
+    <div id="wrapper">
+        <div class="content" id="intro">
+            <br />
+            <h1 id="intro">Overview</h1>
+            <p><strong>Motivation:</strong> The basic stock chart is limited in providing insights for short-term and day-trading investors.  For instance, a typical stock chart does not contain display historical trends on intraday and overnight price changes.  In addition, dates of key events, such as quarterly earnings announcements, are omitted from general stock charts, despite being directly responsible large price swings.  Hence, the visualizations here are meant to bridge these gaps by providing alternate, yet essential, perspectives on historical stock price trends to empower short-term investors on making data-driven transactions.<br /><br />
+                <strong>Data Sources:</strong> The datasets for this analysis were obtained from <a href="https://www.kaggle.com/tsaustin/us-historical-stock-prices-with-earnings-data">Kaggle</a>. The datasets included several years of daily stock prices as well as information on dividends and earnings.<br /><br />
+                <strong>Target Audience:</strong> The target audience for these visualizations are short-term investors, looking for a data-driven edge in forecasting stock price movements. <br />
+            </p>
+        </div>
+
+
+        <div style="background-color:#CDCDCD" id="analysis1">
+            <div class="content">
+                <br />
+                <h1 id="analysis1">Standard</h1>
+                <p><strong>Description:</strong> The Standard chart displays the line chart of the stock's daily close price and volume. The volume bar chart also highlights the dates of <strong>Earnings Announcements</strong> (color=yellow) and <strong>Ex-Dividends</strong> (color=red).<br /><br />
+                    <em><strong>Instructions:</strong> This is basic chart that's used in many finance portals. One can use the chart to see the stock's price action compared to volume. An increasing volume shows the conviction of buyers and sellers in either pushing the price up or down, respectively. For example, if the stock trend heads up and volume increases as the price moves higher, it shows buyers have an eagerness to buy; this typically happens with larger moves to the upside (positive returns). </em>
+                    <br />
+                </p>
+                
+                <!-- https://public.tableau.com/profile/stanley.ye#!/vizhome/StockPricePatterns-Final/Standard -->
+                <div class='tableauPlaceholder' id='viz1587058930733' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StockPricePatterns-Final&#47;Standard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='StockPricePatterns-Final&#47;Standard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StockPricePatterns-Final&#47;Standard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1587058930733');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            </div>
+        </div>
+
+
+        <div class="content" id="analysis2">
+                <br />
+                <h1 id="analysis2">Candlestick</h1>
+                <p><strong>Description:</strong> The area between the open and the close is called the real body, price excursions above and below the real body are shadows (also called wicks). Wicks illustrate the highest and lowest traded prices of an asset during the time interval represented. The body illustrates the opening and closing trades.
+                    If the asset closed higher than it opened, the body is green, with the opening price at the bottom of the body and the closing price at the top. If the asset closed lower than it opened, the body is red, with the opening price at the top and the closing price at the bottom. Thus, the color of the candle represents the price movement relative to the prior period's close and candle represents the price direction of the period in isolation (red for a higher open and lower close; green for a lower open and a higher close). <br /><br />
+                    <em><strong>Instructions:</strong> Candlestick charts are a visual aid for decision making in stock. Looking at a candlestick, one can identify an asset's opening and closing prices, highs and lows, and overall range for a specific time frame. For example, when the bar is green and high relative to other time periods, it means buyers are very bullish. The opposite is true for a red bar.
+
+                        A <a href="https://en.wikipedia.org/wiki/Candlestick_pattern" title="Candlestick pattern">candlestick pattern</a> is a particular sequence of candlesticks on a candlestick chart, which is mainly used to identify trends.</em>
+                    <br />
+                </p>
+
+                <!-- https://public.tableau.com/profile/stanley.ye#!/vizhome/Candlestick_15870686144120/CandleStickChart -->
+                <div class='tableauPlaceholder' id='viz1587068741074' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Candlestick_15870686144120&#47;CandleStickChart&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Candlestick_15870686144120&#47;CandleStickChart' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Candlestick_15870686144120&#47;CandleStickChart&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1587068741074');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+        </div>
+
+
+        <div style="background-color:#CDCDCD" id="analysis3">
+            <div class="content" id="analysis3">
+                <br />
+                <h1 id="analysis3">Daily Change</h1>
+                <p><strong>Description:</strong> The Daily Change chart complements the typical stock chart by visualizing daily price movements, either across the same day or overnight.  In addition, Earnings Dates are specifically labeled given their tendencies to trigger large price swings.  Thus, the Daily Change chart delivers insights to short-term investors for identifying low-risk, high-reward opportunities.<br /><br />
+                    <em><strong>Instructions:</strong> The Daily Change chart is designed to show either <strong>Same Day</strong> or <strong>Overnight</strong> price fluctuations for a single stock.  Data points for <strong>Earnings Dates</strong> are highlighted (color=orange) and can be extracted using the <strong>Show Dates</strong> filter.</em>
+                    <br />
+                </p>
+
+                <!-- https://public.tableau.com/profile/martin.jung#!/vizhome/Stock_Price_Change_Final/OvernightPriceChange -->
+                <div class='tableauPlaceholder' id='viz1586732555558' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Stock_Price_Change_Final&#47;OvernightPriceChange&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Stock_Price_Change_Final&#47;OvernightPriceChange' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Stock_Price_Change_Final&#47;OvernightPriceChange&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1586732555558');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            </div>
+        </div>
+
+
+        <div style="background-color:white">
+            <br />
+            <div class="content">
+                <br />
+                <h1 id="team">About Us</h1>
+                <p>
+                    <h4>Team Members</h4>
+                    <table cellpadding="50px">
+                        <tr>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Gopi Photo" src="gopi_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Gopi Duddi<br />
+                                            <a href="mailto:gduddi@berkeley.edu">gduddi@berkeley.edu</a><br />
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Martin Photo" src="martin_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Martin Jung<br />
+                                            <a href="mailto:smus78@berkeley.edu">smus78@berkeley.edu</a><br />
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="team_photo">
+                                    <img alt="Stanley Photo" src="stanley_photo.jpg">
+                                    <div class="team_info">
+                                        <p>Stanley Ye<br />
+                                            <a href="mailto:stanley.ye@berkeley.edu">stanley.ye@berkeley.edu</a><br />
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </p>
+            </div>
+        </div>
+        <script>
+        window.onscroll = function() { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        </script>
+    </div>
+</body>
+
+</html>
